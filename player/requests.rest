@@ -1,0 +1,152 @@
+// REQUEST NOT BEING LOGGED IN http://localhost:8080 || http://localhost:8080/
+// USER
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+// LOGIN REQUEST
+
+{
+  "login": "admin@qwerty.com",
+   "password": "`admin`"
+}
+###
+//REQUEST ARTIST
+GET http://localhost:8080/api/v1/artists
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ3NTk3Mjc1LCJleHAiOjE2NDc2MDQ0NzV9.GtJ9fpJ9ijnPIl-imh83bnthkw5EQ2PLUyaYMeTUrw0
+###
+POST http://localhost:8080/api/v1/artists/add
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ3NTk3NDI5LCJleHAiOjE2NDc2MDQ2Mjl9.ICfiQEWJcKWNZE-xXl4W6lL2JKLrJAUGC7yabFaMckQ
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+// ADD NEW ARTIST 
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+ARTIST32
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+ANOTHER BRAND NEW ARTIST
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="photo"; filename="1.jpg"
+Content-Type: image/jpg
+
+< ./1.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+// EDIT ARTIST 
+
+PATCH  http://localhost:8080/api/v1/artists/edit
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ3NTk3NDI5LCJleHAiOjE2NDc2MDQ2Mjl9.ICfiQEWJcKWNZE-xXl4W6lL2JKLrJAUGC7yabFaMckQ
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="id"
+
+33
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+COI
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+Legendary soviet rock band
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="photo"; filename="1.jpg"
+Content-Type: image/jpg
+
+< ./1.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+// DELETE ARTIST
+DELETE http://localhost:8080/api/v1/artists/delete
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ3NTk3ODA3LCJleHAiOjE2NDc2MDUwMDd9.hVlitPjOjP9_R8Dw3EgfvRMlOMsQuUVSNtXK7u1w51w
+Content-Type: application/json
+
+{
+  "name": "COI"
+}
+###
+
+// ADMIN
+GET http://localhost:8080/api/v1/something
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ1MDg4ODQ4LCJleHAiOjE2NDUwOTYwNDh9.SkBOB5dKA2I0ndeKpbpNTDFwa8CLQGlVWuZdSIaDaqA
+
+###
+// USER
+GET http://localhost:8080/api/v1/something
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjQ1MDg4ODQ4LCJleHAiOjE2NDUwOTYwNDh9.SkBOB5dKA2I0ndeKpbpNTDFwa8CLQGlVWuZdSIaDaqA
+
+###
+POST http://localhost:8080/api/v1/register
+Content-Type: application/json
+// NEW USER
+
+{       
+  "firstName": "newuser",
+  "lastName": "newuser",
+  "userName": "newuser",
+  "email": "newuser@qwerty.com",
+  "phone": "+111111111111",
+  "password": "`newuser`",
+  "passwordConfirmation": "`newuser`"
+}
+###
+POST http://localhost:8080/api/v1/reset-password
+Content-Type: application/json
+// REST PLS PLS PSL 
+
+{
+  "login": "+72126122272"
+}
+###
+
+POST http://localhost:8080/api/v1/change-password
+Content-Type: application/json
+// SET NEW PAS PLS PLS PLS 
+
+{
+ "password": "okokokokok",
+ "passwordConfirmation": "okokokokok"
+}
+
+###
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+
+{
+  "login": "+7212612222",
+  "password": "okokokokok"
+}
+###
+
+
+GET http://localhost:8080/api/v1/something
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlVzZXIiLCJpYXQiOjE2NDQ5OTYxNzgsImV4cCI6MTY0NTAwMzM3OH0.0WKmgQFovQNH9txqFK-T6zhK21NhhiIAtW1cwjFxbLM
+###
+
+POST http://localhost:8080/api/v1/login
+Content-Type: application/json
+// LOGIN REQUEST
+
+{
+  "login": "awesome@nesss.com",
+  "password": "okokokokok"
+}
+###
+
+
+POST http://localhost:8080/api/v1/change-password/c730d9088a135e8d906175fb105b2e9c
+Content-Type: application/json
+// SET NEW PAS PLS PLS PLS 
+
+{
+ "password": "okokokokok",
+ "passwordConfirmation": "okokokokok"
+}
+
+###
+DELETE  http://localhost:8080/api/v1/logout
+// LOGOUT REQUEST
+
+###

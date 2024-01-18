@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  nodanorm-back:   
+    image: ${registryName}/${projectName}:${WORKING_ENV}
+    container_name: ${projectName}-${WORKING_ENV}
+    restart: always
+    env_file:
+      - variables.env         
+    ports:
+      - 8080:8080
+  database:
+    env_file:
+      - variables.env
+    image: postgres:12 
+    container_name: ${projectName}-db
+    ports:
+      - 5432:5432
+    restart: always 
+    volumes:
+      - database-data:/var/lib/postgresql/data:rw    
+ 
+volumes:
+  database-data: 
