@@ -1,7 +1,7 @@
-Some of the training Backend projects including:
+# Some of the training Backend projects including:
 
-    TypeScript
-    NodeJS
-    NextJS
-    typeorm
-    etc.
+- TypeScript 
+- NodeJS
+- NextJS
+- typeorm
+- etc.
